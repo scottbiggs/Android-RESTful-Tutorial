@@ -58,6 +58,15 @@ public class Main extends Activity
 	private class LongRunningGetIO 
 				extends AsyncTask <Void, Void, String> {
 
+		/*********************
+		 * Looks like it takes an HttpEntity and turns it into
+		 * a string.
+		 * 
+		 * @param entity
+		 * @return
+		 * @throws IllegalStateException
+		 * @throws IOException
+		 */
 		protected String getASCIIContentFromEntity(HttpEntity entity) 
 				throws IllegalStateException, IOException {
 			Log.i(tag, "entering getASCIIContentFromEntity()");
@@ -72,6 +81,7 @@ public class Main extends Activity
 			return out.toString();
 		}
 
+		//--------------------
 		@Override
 		protected String doInBackground(Void... params) {
 			Log.i(tag, "begin doInBackground()");
